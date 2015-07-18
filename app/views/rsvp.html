@@ -1,0 +1,62 @@
+<div class="opening cards">
+  <div class="overlay active">
+    <div ng-include="'views/partials/logo.html'"></div>
+  </div>
+</div>
+<div ng-include="'views/partials/navbar.html'"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <h3>
+        We are honoured to host you and excited to be celebrating our special day amongst our closest family and friends.
+      </h3>
+      <h3>
+        <small>
+          We are handling RSVPs via Mailchimp, it makes it easier for us to email you before the event about details and news, and after the event all the pictures.
+        </small>
+      </h3>
+
+      <!-- <form action="//layanandmohamed.us11.list-manage.com/subscribe/post?u=5b062633b51bad1608f575879&amp;id=b109f6c88b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate> -->
+      <form ng-submit="submit()" class="validate text-left" target="_blank" novalidate ng-if="!success">
+        <h3><small>* indicates required</small></h3>
+        <div class="form-group">
+          <label>Email Address  <span class="asterisk">*</span>
+          </label>
+          <input type="email" value=""  class="form-control required email" ng-model="form.EMAIL">
+        </div>
+        <div class="form-group">
+          <label>Name on card  <span class="asterisk">*</span>
+          </label>
+          <input type="text" value=""  class="form-control required" ng-model="form.NAME">
+        </div>
+        <div class="form-group size1of2">
+          <label>Number in party  <span class="asterisk">*</span>
+          </label>
+          <input type="number"  class="form-control required" value="" ng-model="form.PARTYNUM">
+        </div>
+        <div class="form-group input-group">
+          <strong>To Attend  <span class="asterisk">*</span>
+          </strong>
+          <ul class="list-inline">
+            <li><input type="radio" value="Yes"  ng-model="form.ATTENDING"> <label> Yes</label></li>
+            <li><input type="radio" value="No"  ng-model="form.ATTENDING"> <label> No</label></li>
+          </ul>
+        </div>
+        <div class="responses">
+          <div ng-if="errors.length">
+            <ul>
+              <li ng-repeat="error in errors">
+                {{error}}
+              </li>
+            </ul>
+          </div>
+        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_5b062633b51bad1608f575879_b109f6c88b" tabindex="-1" value=""></div>
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+      </form>
+      <h3 ng-if="success">
+        {{success}}
+      </h3>
+    </div>
+  </div>
+</div>
