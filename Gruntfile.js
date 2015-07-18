@@ -17,6 +17,7 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
+    buildGhPages: 'grunt-build-gh-pages'
   });
 
   grunt.loadNpmTasks('grunt-build-gh-pages');
@@ -440,9 +441,17 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    buildGhPages: {
+      options: {
+        cname: true
+      },
+      dist: {
+        options: {
+        }
+      }
     }
   });
-
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -488,7 +497,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'buildGhPages:dist'
   ]);
 
   grunt.registerTask('default', [
