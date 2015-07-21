@@ -448,6 +448,7 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
+          pull: false
         }
       }
     }
