@@ -444,7 +444,7 @@ module.exports = function (grunt) {
     },
     buildGhPages: {
       options: {
-        cname: true
+        cname: 'layanandmohamed.com \n www.layanandmohamed.com'
       },
       dist: {
         options: {
